@@ -13,47 +13,67 @@ html(lang="ko")
       h1 Noom
 
     main
-      div#welcome
+      section#welcome
         form
-          input(
+          input#roomInput(
             type="text"
             placeholder="Room name"
+            maxlength="80"
+            required
+          )
+          input#nicknameInput(
+            type="text"
+            placeholder="Your nickname"
+            maxlength="30"
             required
           )
           button(type="submit") Enter Room
 
-      div#call(hidden)
-        div#myStream
-          video#myFace(
-            autoplay
-            playsinline
-            muted
-            width="400"
-            height="400"
-          )
+      section#call(hidden)
+        div#meetingLayout
+          section#sharedPanel(hidden)
+            h2#screenTitle 공유 화면
+            video#sharedScreen(
+              autoplay
+              playsinline
+              muted
+            )
 
-          div#controls
-            button#mute(type="button") Mute
-            button#camera(type="button") Turn Camera Off
-            select#cameras
+          section#cameraPanel
+            div#videoGrid
+              div.videoCard#myVideoCard
+                h3#myVideoName 나
+                video#myFace(
+                  autoplay
+                  playsinline
+                  muted
+                )
 
-        video#myPeerFace(
-          autoplay
-          playsinline
-          width="400"
-          height="400"
-        )
+        div#controls
+          button#mute(type="button") Mute
+          button#camera(type="button") Turn Camera Off
+          button#screenShare(type="button") Share Screen
+          select#cameras
+          button#leaveRoom(type="button") 🔴 Leave Room
 
-        h3 Data Channel Chat
-        ul#chatList
+        section#participants
+          h3
+            | 참가자 목록 (
+            span#participantCount 0
+            | /10)
+          ul#participantList
 
-        form#chatForm
-          input(
-            type="text"
-            placeholder="메시지 입력"
-            required
-          )
-          button(type="submit") Send
+        section#chat
+          h3 Data Channel Chat
+          ul#chatList
+
+          form#chatForm
+            input(
+              type="text"
+              placeholder="메시지 입력"
+              required
+            )
+            button(type="submit") Send
 
     script(src="/socket.io/socket.io.js")
     script(src="/public/js/app.js")
