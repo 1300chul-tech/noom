@@ -1,0 +1,175 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f5f5;
+  color: #303f46;
+  min-height: 100vh;
+}
+
+header {
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* 방 입장 화면 */
+
+#welcome {
+  width: 100%;
+  max-width: 500px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+#welcome form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+button {
+  padding: 15px 20px;
+  background-color: #303f46;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #48616b;
+}
+
+/* 회의 화면 */
+
+#call {
+  text-align: center;
+  background-color: #202124;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 500px;
+}
+
+#myStream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* 카메라 영상 */
+
+#myFace,
+#myPeerFace {
+  max-width: 100%;
+  background-color: #111;
+  border: 2px solid #444;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* 마이크와 카메라 버튼 */
+
+#controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+#controls button {
+  background-color: #3c4043;
+  color: white;
+}
+
+#controls button:hover {
+  background-color: #5f6368;
+}
+
+select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* 채팅 */
+
+#call h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 25px 0 15px;
+}
+
+#chatList {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #303134;
+  border-radius: 10px;
+  min-height: 100px;
+  text-align: left;
+}
+
+#chatList li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #444746;
+  color: white;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+
+#chatForm {
+  max-width: 600px;
+  margin: 15px auto;
+  display: flex;
+  gap: 10px;
+}
+
+#chatForm input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 모바일 화면 */
+
+@media (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+
+  #call {
+    padding: 15px;
+  }
+
+  #chatForm {
+    flex-direction: column;
+  }
+}

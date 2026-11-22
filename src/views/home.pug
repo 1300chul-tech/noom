@@ -1,0 +1,59 @@
+
+doctype html
+html(lang="ko")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Noom
+    link(rel="stylesheet", href="/public/css/reset.css")
+    link(rel="stylesheet", href="/public/css/styles.css")
+
+  body
+    header
+      h1 Noom
+
+    main
+      div#welcome
+        form
+          input(
+            type="text"
+            placeholder="Room name"
+            required
+          )
+          button(type="submit") Enter Room
+
+      div#call(hidden)
+        div#myStream
+          video#myFace(
+            autoplay
+            playsinline
+            muted
+            width="400"
+            height="400"
+          )
+
+          div#controls
+            button#mute(type="button") Mute
+            button#camera(type="button") Turn Camera Off
+            select#cameras
+
+        video#myPeerFace(
+          autoplay
+          playsinline
+          width="400"
+          height="400"
+        )
+
+        h3 Data Channel Chat
+        ul#chatList
+
+        form#chatForm
+          input(
+            type="text"
+            placeholder="메시지 입력"
+            required
+          )
+          button(type="submit") Send
+
+    script(src="/socket.io/socket.io.js")
+    script(src="/public/js/app.js")

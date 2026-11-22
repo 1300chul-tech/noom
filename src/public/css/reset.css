@@ -1,0 +1,30 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, p,
+form, label, input, button, select,
+video, ul, li, header, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
