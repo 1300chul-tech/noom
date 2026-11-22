@@ -332,3 +332,32 @@ button:disabled {
     flex-direction: column;
   }
 }
+
+/* 채팅창을 영상 바로 아래로 올리기 */
+
+#call {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#meetingLayout {
+  margin-bottom: 0;
+}
+
+#chat {
+  order: 1;
+  margin-top: 0 !important;
+  width: 100%;
+  max-width: none;
+  position: static;
+}
+
+#participants {
+  order: 2;
+}
+
+#chatList {
+  max-height: 180px;
+  overflow-y: auto;
+}
